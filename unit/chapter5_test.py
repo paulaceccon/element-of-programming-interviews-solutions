@@ -1,6 +1,5 @@
 import unittest
-
-from chapter5 import *
+from code.chapter5 import *
 
 
 class Chapter5Test(unittest.TestCase):

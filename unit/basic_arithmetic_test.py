@@ -1,6 +1,5 @@
 import unittest
-
-from basic_arithmetic import *
+from code.basic_arithmetic import *
 
 
 class BasicArithmeticTest(unittest.TestCase):
