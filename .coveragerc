@@ -3,8 +3,7 @@ exclude_lines =
     raise NotImplementedError
     pragma: no cover
 omit =
-    */__tests__/*
+    */unit/*
     */site-packages/*
     */distutils/*
-    *eyecuecommon*
     */dist-packages/*
