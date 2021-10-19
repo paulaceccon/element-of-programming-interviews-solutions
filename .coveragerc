@@ -1,0 +1,10 @@
+[report]
+exclude_lines =
+    raise NotImplementedError
+    pragma: no cover
+omit =
+    */__tests__/*
+    */site-packages/*
+    */distutils/*
+    *eyecuecommon*
+    */dist-packages/*
