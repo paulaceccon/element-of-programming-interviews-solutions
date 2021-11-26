@@ -1,46 +1,32 @@
 import unittest
-from code.chapter5 import *
+from code.chapter6 import *
 
 
-class Chapter5Test(unittest.TestCase):
-    def test_count_bits_on(self):
-        output = count_bits_on(9)
-        self.assertEqual(output, 2)
+class Chapter6Test(unittest.TestCase):
+    def test_split_in_even_odd(self):
+        output = split_in_even_odd([1, 3, 5, 7, 2, 4, 9, 8])
+        self.assertEqual(output, [8, 4, 2, 7, 5, 9, 3, 1])
 
-    def test_parity_on(self):
-        output = parity_on(9)
-        self.assertEqual(output, 0)
+    def test_dutch_flag_partition_v1(self):
+        arr = [2, 0, 0, 2, 2, 1, 1]
 
-    def test_parity_ok(self):
-        output = parity_ok(9)
-        self.assertEqual(output, 0)
+        output = dutch_flag_partition_v1(arr.copy(), 1)  # value 0
+        self.assertEqual(output, [0, 0, 1, 2, 2, 2, 1])
 
-    def test_swap_bits_o1(self):
-        output = swap_bits_o1(73, 1, 6)
-        self.assertEqual(output, 11)
+        output = dutch_flag_partition_v1(arr.copy(), 5)  # value 1
+        self.assertEqual(output, [0, 0, 1, 1, 2, 2, 2])
 
-    def test_closest_int_same_bit_count_on(self):
-        output = closest_int_same_bit_count_on(8)
-        self.assertEqual(output, 4)
+        output = dutch_flag_partition_v1(arr.copy(), 0)  # value 2
+        self.assertEqual(output, [0, 0, 1, 1, 2, 2, 2])
 
-    def test_add_on(self):
-        output = add_on(30, 10)
-        self.assertEqual(output, 40)
+    def test_dutch_flag_partition_v2(self):
+        arr = [2, 0, 0, 2, 2, 1, 1]
 
-    def test_multiply_on2(self):
-        output = multiply_on2(2, 5)
-        self.assertEqual(output, 10)
+        output = dutch_flag_partition_v2(arr.copy(), 1)  # value 0
+        self.assertEqual(output, [0, 0, 2, 2, 2, 1, 1])
 
-    def test_divide_on(self):
-        output = divide_on(5, 2)
-        self.assertEqual(output, 2)
+        output = dutch_flag_partition_v2(arr.copy(), 5)  # value 1
+        self.assertEqual(output, [0, 0, 1, 1, 2, 2, 2])
 
-        output = divide_on(6, 2)
-        self.assertEqual(output, 3)
-
-    def test_power_on(self):
-        output = power_on(2, 3)
-        self.assertEqual(output, 8)
-
-        output = power_on(2, -2)
-        self.assertEqual(output, 0.25)
+        output = dutch_flag_partition_v2(arr.copy(), 0)  # value 2
+        self.assertEqual(output, [0, 0, 1, 1, 2, 2, 2])

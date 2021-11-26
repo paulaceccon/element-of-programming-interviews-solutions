@@ -24,10 +24,8 @@ class Chapter5Test(unittest.TestCase):
         self.assertEqual(output, 4)
 
     def test_add_on(self):
-        # TODO: check this method
-        # output = add_on(30, 10)
-        # self.assertEqual(output, 40)
-        pass
+        output = add_on(30, 10)
+        self.assertEqual(output, 40)
 
     def test_multiply_on2(self):
         output = multiply_on2(2, 5)

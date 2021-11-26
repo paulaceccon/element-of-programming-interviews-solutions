@@ -66,7 +66,7 @@ def add_on(a: int, b: int) -> int:
     Adds @a and @b without arithmetical operators, in O(n).
     """
     print("Adding", a, "and", b, "without arithmetical operators")
-    sum_ = 0
+    running_sum = 0
     carryin = 0
     k = 1
     temp_a = a
@@ -75,14 +75,12 @@ def add_on(a: int, b: int) -> int:
         ak = a & k
         bk = b & k
         carryout = (ak & bk) | (ak & carryin) | (bk & carryin)
-        print(temp_a, temp_b, ak, bk, sum_)
-        sum_ |= ak ^ bk ^ carryin
-        carryin << carryout << 1
-        k <<= 1
-        temp_a >>= 1
-        temp_b >>= 1
-        print(sum_)
-    return sum_
+        running_sum |= ak ^ bk ^ carryin
+        carryin = carryout << 1
+        k = k << 1
+        temp_a = temp_a >> 1
+        temp_b = temp_b >> 1
+    return running_sum | carryin
 
 
 def multiply_on2(x: int, y: int) -> int:
@@ -139,8 +137,3 @@ def power_on(x: int, y: int):
         x *= x
         power >>= 1
     return result
-
-
-if __name__ == "__main__":
-    print(add_on(5, 2))
-    print(add_on(10, 30))
