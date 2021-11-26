@@ -20,7 +20,7 @@ tests:
 
 tests-coverage:
 	coverage run -m pytest unit -v
-	coverage report --fail-under=$(TEST_COVERAGE_PERCENTAGE)
+	coverage report -m --fail-under=$(TEST_COVERAGE_PERCENTAGE)
 
 #====================================================
 # Locks the dependency file (from setup.py)
